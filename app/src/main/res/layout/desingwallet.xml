@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/action_bar_toollbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metodos de pago"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            android:padding="10dp"
+            android:layout_margin="16dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layoutefectivo">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Efectivo"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/pago_en_efectivo"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutvisaclient">
+
+            <TextView
+                android:id="@+id/tarjetayaagregada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Visa"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/credito"
+                android:drawablePadding="15dp"
+                android:drawableTintMode="src_in"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutagregartarjetas">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar metodo de pago"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/mas"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textagregartarjetas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarjeta de credito/debito"
+            android:layout_gravity="center_horizontal"
+            android:gravity="start"
+            android:textColor="@color/colorWhite"
+            android:layout_marginStart="67dp"
+            android:layout_marginTop="-10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:clickable="false"
+            android:id="@+id/layoutpagocongoogle">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google Pay"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/gpay"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Promociones"
+                android:textColor="@color/colorWhite"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp"
+                android:padding="10dp"
+                android:layout_margin="16dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:id="@+id/layoutcupones">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cupones"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/cupones"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layoutnombretarjeta"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/nombretarjetadesing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nombretarjeta"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/pagar"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layoutfechavencimiento"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/fechavencimientodesing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="fechavencimiento"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/pagar"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layoutcodigoseguridadtarjeta"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/codigoseguridadtarjetadesing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="segurosegurica"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableStart="@drawable/pagar"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

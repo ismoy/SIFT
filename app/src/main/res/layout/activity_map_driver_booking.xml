@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Controllers.Drivers.MapDriverBookingActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <Button
+        android:id="@+id/btnstartbooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="iniciar viaje"
+        android:textAllCaps="true"
+        android:background="@drawable/button_login_rounded"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@color/colorWhite"
+        android:layout_margin="30dp"/>
+
+    <Button
+        android:id="@+id/btnendtbooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="finalizar viaje"
+        android:textAllCaps="true"
+        android:background="@drawable/button_login_rounded"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@color/colorWhite"
+        android:layout_margin="30dp"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <io.github.florent37.shapeofview.shapes.BubbleView
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:shape_bubble_arrowHeight="15dp"
+        app:shape_bubble_arrowWidth="15dp"
+        app:shape_bubble_arrowPosition="top"
+        app:shape_bubble_borderRadius="20dp"
+        android:layout_gravity="bottom">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:backgroundTint="@android:color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageviewclientbooking"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/man"
+                app:tint="@color/colorWhite"
+                app:civ_border_width="3dp"
+                app:civ_border_color="@color/colorWhite"
+                android:layout_gravity="center"
+                android:layout_marginStart="7dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="7dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre user"
+                    android:id="@+id/textviewclientbooking"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:maxLines="2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email user"
+                    android:id="@+id/textviewemailclientbooking"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="origin"
+                    android:id="@+id/textvieworiginclientbooking"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:maxLines="2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Destination"
+                    android:id="@+id/textviewdestinationclientbooking"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:maxLines="2"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </io.github.florent37.shapeofview.shapes.BubbleView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="210dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/black"
+        android:backgroundTint="@android:color/black"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="10dp"
+        app:cardElevation="5dp"
+        >
+        <TextView
+            android:id="@+id/textviewtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="time"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_marginBottom="210dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/black"
+        android:backgroundTint="@android:color/black"
+        app:cardCornerRadius="20dp"
+        app:contentPadding="10dp"
+        app:cardElevation="5dp"
+        android:layout_marginStart="7dp"
+        >
+        <TextView
+            android:id="@+id/textviewkm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="km"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            />
+    </androidx.cardview.widget.CardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

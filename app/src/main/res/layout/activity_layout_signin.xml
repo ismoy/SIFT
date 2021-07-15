@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:theme="@style/SplashTeme"
+    tools:context=".Controllers.layout_signin">
+
+    <include layout="@layout/action_bar_toollbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btn_phone_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@android:color/white"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:padding="16dp"
+            android:text="Sign In with phone"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_google_sign_in"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@android:color/white"
+            android:text="Sign In with Google"
+            android:textColor="@android:color/black"
+            android:visibility="invisible"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_iniciar_sign_in"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@android:color/white"
+            android:text="@string/alrdy_have"
+            android:shadowRadius="@android:integer/config_longAnimTime"
+            android:textColor="@android:color/black"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_registrar"
+            android:padding="16dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@android:color/white"
+            android:text="Register"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:shadowRadius="@android:integer/config_longAnimTime"
+            android:textColor="@android:color/black"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

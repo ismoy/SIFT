@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorReady"
+    tools:context="cl.tofcompany.sift.Controllers.FeedbackActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mail"
+            android:text="@string/ismoy_belizaire_inacapmail_cl_cristian_guajardo08_inacapmail_cl"
+            android:textColor="@color/colorWhite"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/grupo"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"/>
+
+
+    <TextView
+        android:id="@+id/estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/antic"
+        android:textStyle="bold"
+        android:layout_marginBottom="-25dp"
+        android:text="@string/very_disatisfied"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progress="@integer/config_navAnimTime"
+            android:progressTint="@android:color/holo_green_light"
+            android:progressBackgroundTint="@android:color/white"/>
+
+
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="30dp">
+
+
+    <EditText
+        android:id="@+id/editsubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:background="@color/colorWhite"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="@string/subject_of_your_feedback"
+        android:textColorHint="@color/colorReady"
+        android:padding="15dp"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp">
+
+
+        <EditText
+            android:id="@+id/txtdudas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/message_feedback"
+            android:textColorHint="@color/colorReady"
+            android:background="@color/colorWhite"
+            android:gravity="start|top"
+            android:ems="10"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:padding="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnsend"
+            android:text="@string/send"
+            android:textSize="25sp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/antic"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

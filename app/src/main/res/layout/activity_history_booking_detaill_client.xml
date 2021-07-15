@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Controllers.Clients.HistoryBookingDetaillClient">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <io.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="4dp"
+            app:shape_arc_height="20dp"
+            app:shape_arc_position="bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"/>
+            <TextView
+                android:id="@+id/textviewnamebookingdetailclient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name driver"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:layout_margin="30dp"
+                android:maxLines="2"/>
+
+        </io.github.florent37.shapeofview.shapes.ArcView>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_location_on"
+            android:layout_marginTop="98dp"/>
+
+        <TextView
+            android:id="@+id/textvieworigenhistorybookingdetaillclient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Fake Street 234 San Francisco"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_map"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/textviewdestinationhistorybookingdetaillclient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Fake Street 234 San Francisco"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_star_outline"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/textviewcalificationhistorybookingdetaillclient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="0"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:textColor="@color/colorWhite"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_imagehistorybookingdetaill"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/man"
+        android:layout_gravity="center|top"
+        app:civ_border_width="5dp"
+        app:civ_border_color="@android:color/black"
+        android:layout_marginTop="130dp">
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <RatingBar
+        android:id="@+id/ratingBarhistorybookingdetailclient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:numStars="5"
+        android:isIndicator="true"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/colorWhite"
+        android:background="@color/colorWhite"
+        android:backgroundTintMode="screen"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_imagebackhistorybookingdetaill"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_arrow_back"
+        android:layout_gravity="left|top"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@android:color/black"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp">
+    </de.hdodenhof.circleimageview.CircleImageView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.Clients.Configuration"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/action_bar_toollbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layoutefectivo">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutvisaclient">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mis lugares Favoritos"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableTintMode="src_in"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutprivacidad">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Privacidad"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableTintMode="src_in"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutterminosycondiciones">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Terminos y Condiciones"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableTintMode="src_in"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:id="@+id/layoutacercadesift">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acerca de SIFT"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="32dp"
+                android:drawableTint="@color/colorWhite"
+                android:drawablePadding="15dp"
+                android:drawableTintMode="src_in"
+                android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_right_24"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

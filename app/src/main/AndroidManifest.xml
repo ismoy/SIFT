@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cl.tofcompany.sift">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/grupo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/grupo"
+        android:supportsRtl="true"
+        android:theme="@style/BgTheme"
+        tools:ignore="ExtraText">
+        <activity android:name=".testpago"></activity>
+        <activity android:name=".Controllers.Clients.itempagarcongoogle" />
+        <activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Controllers.Drivers.TasaFinalizacionServicios"
+            android:parentActivityName=".Controllers.Drivers.MapsDriverActivity" />
+        <activity
+            android:name=".Controllers.Drivers.TasadeAceptacion"
+            android:parentActivityName=".Controllers.Drivers.MapsDriverActivity" />
+        <activity
+            android:name=".Controllers.Drivers.AcercadelDriver"
+            android:parentActivityName=".Controllers.Drivers.MapsDriverActivity" />
+        <activity
+            android:name=".Controllers.Clients.ConnectWithSIFT"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.Clients.Configuration"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.Clients.SecurityCenter"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.Clients.CuponesDisponibleClient"
+            android:parentActivityName=".Controllers.Clients.WalletClient" />
+        <activity
+            android:name=".Controllers.Clients.TarjetaAgregadoClient"
+            android:parentActivityName=".Controllers.Clients.WalletClient" />
+        <activity
+            android:name=".Controllers.Clients.PagoEnEfectivoClient"
+            android:parentActivityName=".Controllers.Clients.WalletClient" />
+        <activity
+            android:name=".Controllers.Clients.WalletClient"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.Clients.PagoActivity"
+            android:parentActivityName=".Controllers.Clients.WalletClient"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.HistoryBookingDetaillDriver"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.HistoryBookingDetaillClient"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.HistoryBookingDriver"
+            android:parentActivityName=".Controllers.Drivers.MapsDriverActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.HistoryBookingClient"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.UpdateProfileDriver"
+            android:parentActivityName=".Controllers.Drivers.MapsDriverActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.UpdateProfile"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.NotificationBooking"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.CalificationDriver"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.CalificationClient"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.MapDriverBookingActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.MapClientBookingActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.RequestDriverActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.DetailRequestActivity"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.MapsDriverActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Clients.MapsClientActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Drivers.RegisterDriverActivity"
+            android:parentActivityName=".Controllers.layout_signin"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Login"
+            android:parentActivityName=".Controllers.layout_signin"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.layout_signin"
+            android:parentActivityName=".Controllers.layout_signin"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.FeedbackActivity"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.ProfileActivity"
+            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
+        <activity
+            android:name=".Controllers.MainActivity"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.ForgotPassword"
+            android:parentActivityName=".Controllers.MainActivity" />
+        <activity
+            android:name=".Controllers.Clients.Register"
+            android:parentActivityName=".Controllers.layout_signin"
+            android:theme="@style/BgTheme" />
+        <activity
+            android:name=".Controllers.Splash_Screen"
+            android:theme="@style/SplashTeme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <service android:name=".Service.MyFirebaseMessagingClient">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".receivers.AcceptReceiver"
+            android:enabled="true" />
+        <receiver
+            android:name=".receivers.CancelReceiver"
+            android:enabled="true" />
+    </application>
+
+</manifest>

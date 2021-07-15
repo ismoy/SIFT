@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Controllers.Drivers.NotificationBooking">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <io.github.florent37.shapeofview.shapes.StarView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:elevation="4dp"
+            app:shape_arc_height="20dp"
+            app:shape_arc_position="bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:lottie_imageAssetsFolder="assets"
+                app:lottie_fileName="63565-notification.json"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"/>
+
+        </io.github.florent37.shapeofview.shapes.StarView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="desde"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textvieworiginclientnotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="av lo ovalle"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:maxLines="2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HASTA"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textviewdestinationclientnotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="av lo ovalle"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:maxLines="2"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_timer"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="tiempo de llegada"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textviewMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 Min"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_map"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Distancia"
+                    android:textAllCaps="true"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/textviewdistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 km"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textviewcounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="60"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="50sp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_margin="40dp">
+
+        <Button
+            android:id="@+id/btnaceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:textAllCaps="true"
+            android:background="@drawable/button_login_rounded"
+            android:backgroundTint="@color/colorWhite"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btnrechazar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rechazar"
+            android:textAllCaps="true"
+            android:background="@drawable/button_login_rounded"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@color/colorWhite"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

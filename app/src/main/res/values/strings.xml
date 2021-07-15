@@ -1,0 +1,155 @@
+<resources>
+    <!-- Name app -->
+    <string name="app_name">SIFT</string>
+
+    <!-- the slogan in the splash_creen-->
+    <string name="slogan">The best app to hire your crane service</string>
+
+    <!-- text btn login -->
+    <string name="buttonLogin">Login</string>
+
+    <!-- text save-->
+    <string name="save">Save</string>
+
+    <!-- text new task-->
+    <string name="new_task">New Task</string>
+
+    <!-- text taxks-->
+    <string name="tasks">Tasks</string>
+
+    <!-- text login in register-->
+    <string name="login">Login</string>
+
+    <!-- text forgot password-->
+    <string name="forgot_password">Forgot Password?</string>
+
+    <!-- text lastName-->
+    <string name="last_name">Last Name</string>
+
+    <!-- text email-->
+    <string name="email">Email</string>
+
+    <!-- text btn create account-->
+    <string name="create_account">Create Account</string>
+
+    <!-- text register-->
+    <string name="register">REGISTER</string>
+
+    <!-- text name-->
+    <string name="first_name">First Name</string>
+
+    <!-- text forgot password-->
+    <string name="forgot">Forgot Your Password? <u>Tap Here</u></string>
+
+    <!-- text create new account-->
+    <string name="dnt_have">Don\'t Have an account?</string>
+
+    <!-- text have account register-->
+    <string name="alrdy_have">I have an account</string>
+
+    <!-- text confirm password-->
+    <string name="cofirmpassword">CofirmPassword</string>
+
+    <!-- API client_id google-->
+    <string name="web_client_id">177674970543-su4um6ei3aqlqsgvnm2e1la45726r5jp.apps.googleusercontent.com</string>
+
+    <!-- API app_id facebook-->
+    <string name="facebook_app_id">358874555191782</string>
+
+    <!-- login protogol facebook-->
+    <string name="fb_login_protocol_scheme">fb358874555191782</string>
+
+    <!-- text open navegacion drawer-->
+    <string name="open">Open</string>
+
+    <!-- text close navegacion drawer-->
+    <string name="close">Close</string>
+
+    <!-- text password-->
+    <string name="password">Password</string>
+
+    <string name="this_is_example_de_task_in_ready">This is example de task in Ready</string>
+
+    <!--items navegation drawer-->
+    <string name="user">User</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="other">Others</string>
+    <string name="share">Share</string>
+    <string name="feedback">Feedback</string>
+    <string name="logout">Logout</string>
+
+    <!--items register layout-->
+    <string name="username">Username</string>
+
+    <!--title reset your password-->
+    <string name="reset_your_password">Reset Your Password</string>
+    <!-- text feedback activity-->
+    <string name="very_disatisfied">Very Dissatisfied</string>
+    <string name="disatisfied" translatable="false">Dissatisfied</string>
+    <string name="Satisfied" translatable="false">Satisfied</string>
+    <string name="Very_Satisfied" translatable="false">Very Satisfied</string>
+    <string name="The_Best_App" translatable="false">The Best App</string>
+    <string name="I_love_it" translatable="false">I love it</string>
+    <string name="subject_of_your_feedback">Subject of your feedback</string>
+    <string name="message_feedback">Message Feedback</string>
+    <string name="send">Send</string>
+
+    <string name="confirm_signout" translatable="false"> Confirm SignOut</string>
+    <string name="text_confirm" translatable="false">Are you sure you want to Sign Out?</string>
+    <string name="yes" translatable="false">Yes</string>
+    <string name="no" translatable="false">No</string>
+    <string name="noaction" translatable="false">You clicked on No</string>
+    <!-- message verify -->
+    <string name="Email_is_required." translatable="false">Email is required.</string>
+    <string name="invalid_email" translatable="false">invalid email</string>
+    <string name="Password_is_required." translatable="false">Password is required.</string>
+    <string name="The_password_must_be_at_least_6_characters_long" translatable="false">The password must be at least 6 characters long</string>
+    <string name="Loading..." translatable="false">Loading...</string>
+    <string name="User_was_successfully_logged_in" translatable="false">User was successfully logged in</string>
+    <string name="Account_not_verified.Please_check_youre_mail" translatable="false">Account not verified. Please check your email</string>
+    <string name="Problemwhenloggingincheckyouremailandpassword" translatable="false">Problem when logging in check your email and password</string>
+    <string name="Authenticationfailed." translatable="false">Authentication failed.</string>
+    <string name="Singintocontinue" translatable="false">Sing in to continue</string>
+    <string name="Failedtoconnectwithgoogle" translatable="false">Failed to connect with google</string>
+    <string name="Loginfailed" translatable="false">Login failed</string>
+    <string name="Requiredfield" translatable="false">Required field</string>
+    <string name="Onlyallowletters" translatable="false">Only allow letters</string>
+    <string name="Pleaseenteryourfullname" translatable="false">Please enter your full name</string>
+    <string name="Passwordsdonotmatch" translatable="false">Passwords do not match</string>
+    <string name="Youraccounthasbeencreatedsuccessfully.Checkyouremailtoactivatetheaccount" translatable="false">Your account has been created successfully. Check your email to activate the account</string>
+    <string name="onFailureWecouldnotverifyyouremail" translatable="false">onFailure: We could not verify your email</string>
+    <string name="Error" translatable="false">Error !</string>
+    <string name="Tasksave" translatable="false">Saved Task</string>
+    <string name="Taskcompleted" translatable="false">Task completed</string>
+    <string name="UNDO" translatable="false">UNDO</string>
+    <string name="TaskArchived" translatable="false">Task archived</string>
+    <string name="Anemailhasbeensenttoresetyourpasswordcheckyourinbox" translatable="false">An email has been sent to reset your password check your inbox</string>
+    <string name="Theresetpasswordemailcouldnotbesent" translatable="false">The reset password email could not be sent</string>
+    <string name="Pleaseenteryouremail" translatable="false">Please enter your email</string>
+    <string name="Youhaveanewreminder" translatable="false">You have a new reminder</string>
+    <string name="btnsave">Save</string>
+    <string name="vehicleBrand" translatable="false">Vehicle Brand is required.</string>
+    <string name="vehiclePlate" translatable="false">Vehicle Plate is required.</string>
+
+    <string name="ismoy_belizaire_inacapmail_cl_cristian_guajardo08_inacapmail_cl" translatable="false">ismoy.belizaire@inacapmail.cl , cristian.guajardo08@inacapmail.cl</string>
+    <string name="Soon">Soon</string>
+    <string name="remember_me" translatable="false">Remember Me</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="desde">desde</string>
+    <string name="hasta">HASTA</string>
+    <string name="av_lo_ovalle">av lo ovalle</string>
+    <string name="title_activity_driver_home">DriverHome</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="avisoalcliente" translatable="false">For your security, we will pre-authorize a charge of up to CLP20 on your card. Do not worry, it is only a verification and the money will not be charged to your account</string>
+    <string name="cupones" translatable="false">Cupones Disponibles</string>
+</resources>

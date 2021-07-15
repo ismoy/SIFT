@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorReady"/>
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/base"
+        android:scaleType="fitXY"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgprofile"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/logodefault"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="110dp"/>
+
+    <RelativeLayout
+        android:id="@+id/relax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/imgprofile">
+    <TextView
+        android:id="@+id/txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="60dp"/>
+
+    <TextView
+        android:id="@+id/txtemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/email"
+        android:textSize="20sp"
+        android:layout_below="@+id/txtusername"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="60dp"/>
+    </RelativeLayout>
+
+   <Button
+       android:id="@+id/btnlogout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_below="@+id/relax"
+       android:layout_marginRight="50dp"
+       android:layout_marginLeft="50dp"
+       android:layout_marginTop="40dp"
+       android:textAllCaps="false"
+       android:text="@string/logout"
+       android:textSize="18sp"
+       android:textColor="@color/colorWhite"
+       android:background="@drawable/button_register_rounded"/>
+
+
+
+</RelativeLayout>

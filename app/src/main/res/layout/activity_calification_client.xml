@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Controllers.Drivers.CalificationClient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <io.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:elevation="4dp"
+            app:shape_arc_height="20dp"
+            app:shape_arc_position="bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="viaje finalizado"
+                android:textAllCaps="true"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                app:lottie_imageAssetsFolder="assets"
+                app:lottie_fileName="782-check-mark-success.json"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
+        </io.github.florent37.shapeofview.shapes.ArcView>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/desde"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/textvieworiginclientcalification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="av lo ovalle"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hasta"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textviewdestinationclientcalification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/av_lo_ovalle"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio del servicio"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textviewprecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0 CLP"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="17sp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+        <RatingBar
+            android:id="@+id/ratingBarcalificationclient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btncalificationclient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_login_rounded"
+        android:text="calificar cliente"
+        android:textAllCaps="true"
+        android:layout_margin="40dp"
+        android:textColor="@android:color/black"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

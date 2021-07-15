@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SIFT</string>
+
+    <string name="slogan">La meilleure application pour louer votre service de dépanneuse</string>
+
+    <!-- text btn login -->
+    <string name="buttonLogin">Se connecter</string>
+
+    <!-- text save-->
+    <string name="save">Enregistrer</string>
+
+    <!-- text new task-->
+    <string name="new_task">Nouvelle tâche</string>
+
+    <!-- text taxks-->
+    <string name="tasks">Tâches</string>
+
+    <!-- text login in register-->
+    <string name="login">Se connecter</string>
+
+    <!-- text forgot password-->
+    <string name="forgot_password">Mot de passe oublié?</string>
+
+    <!-- text lastName-->
+    <string name="last_name">nom Prénom</string>
+
+    <!-- text email-->
+    <string name="email">E-mail</string>
+
+    <!-- text btn create account-->
+    <string name="create_account">Créer un compte</string>
+
+    <!-- text register-->
+    <string name="register">S\'INSCRIRE</string>
+
+    <!-- text name-->
+    <string name="first_name">Nom</string>
+
+    <!-- text forgot password-->
+    <string name="forgot">Mot de passe oublié? <u>Appuyez ici</u></string>
+
+    <!-- text create new account-->
+    <string name="dnt_have">Vous n\'avez pas de compte?</string>
+
+    <!-- text have account register-->
+    <string name="alrdy_have">J\'ai un compte</string>
+
+    <!-- text confirm password-->
+    <string name="cofirmpassword">Confirmez le mot de passe</string>
+
+    <!-- API client_id google-->
+    <string name="web_client_id">177674970543-su4um6ei3aqlqsgvnm2e1la45726r5jp.apps.googleusercontent.com</string>
+
+    <!-- API app_id facebook-->
+    <string name="facebook_app_id">358874555191782</string>
+
+    <!-- login protogol facebook-->
+    <string name="fb_login_protocol_scheme">fb358874555191782</string>
+
+    <!-- text open navegacion drawer-->
+    <string name="open">Open</string>
+
+    <!-- text close navegacion drawer-->
+    <string name="close">Close</string>
+
+    <!-- text password-->
+    <string name="password">Mot de passe</string>
+
+    <string name="this_is_example_de_task_in_ready">Ceci est un exemple de tâche dans Ready</string>
+
+    <!--items navegation drawer-->
+    <string name="user">Utilisateur</string>
+    <string name="home">Home</string>
+    <string name="profile">Profil</string>
+    <string name="other">Autres</string>
+    <string name="share">Partager</string>
+    <string name="feedback">Retour d\'information</string>
+    <string name="logout">Se déconnecter</string>
+
+    <!--items register layout-->
+    <string name="username">Nom d\'utilisateur</string>
+
+    <!--title reset your password-->
+    <string name="reset_your_password">Réinitialisez votre mot de passe</string>
+
+    <!-- text feedback activity-->
+    <string name="very_disatisfied">Très insatisfait</string>
+    <string name="disatisfied" translatable="false">Mécontent</string>
+    <string name="Satisfied" translatable="false">Satisfait</string>
+    <string name="Very_Satisfied" translatable="false">Très satisfait</string>
+    <string name="The_Best_App" translatable="false">La meilleure App</string>
+    <string name="I_love_it" translatable="false">J\'aime cela</string>
+    <string name="subject_of_your_feedback">Objet de vos commentaires</string>
+    <string name="message_feedback">Commentaires sur le message</string>
+    <string name="send">Envoyer</string>
+
+    <string name="confirm_signout" translatable="false"> Confirmer la déconnexion</string>
+    <string name="text_confirm" translatable="false">Êtes-vous certain de vouloir vous déconnecter?</string>
+    <string name="yes" translatable="false">Oui</string>
+    <string name="no" translatable="false">Non</string>
+    <string name="noaction" translatable="false">Vous avez cliqué sur Non</string>
+
+    <!-- message verify -->
+    <string name="Email_is_required." translatable="false">Un e-mail est requis.</string>
+    <string name="invalid_email" translatable="false">e-mail invalide</string>
+    <string name="Password_is_required." translatable="false">Mot de passe requis.</string>
+    <string name="The_password_must_be_at_least_6_characters_long" translatable="false">Le mot de passe doit comporter au moins 6 caractères</string>
+    <string name="Loading..." translatable="false">Chargement...</string>
+    <string name="User_was_successfully_logged_in" translatable="false">L\'utilisateur s\'est connecté avec succès</string>
+    <string name="Account_not_verified.Please_check_youre_mail" translatable="false">Compte non vérifié, vérifiez votre adresse e-mail</string>
+    <string name="Problemwhenloggingincheckyouremailandpassword" translatable="false">Problème lors de la connexion, vérifiez votre email et votre mot de passe</string>
+    <string name="Authenticationfailed." translatable="false">Authentification échouée.</string>
+    <string name="Singintocontinue" translatable="false">Connectez-vous pour continuer</string>
+    <string name="Failedtoconnectwithgoogle" translatable="false">Échec de la connexion à google</string>
+    <string name="Loginfailed" translatable="false">Échec de la connexion</string>
+    <string name="Requiredfield" translatable="false">Champs obligatoires</string>
+    <string name="Onlyallowletters" translatable="false">Autoriser uniquement les lettres</string>
+    <string name="Pleaseenteryourfullname" translatable="false">S\'il vous plait entrez votre nom entier</string>
+    <string name="Passwordsdonotmatch" translatable="false">Les mots de passe ne correspondent pas</string>
+    <string name="Youraccounthasbeencreatedsuccessfully.Checkyouremailtoactivatetheaccount" translatable="false">Votre compte a été créé avec succès. Vérifiez votre messagerie pour activer le compte</string>
+    <string name="onFailureWecouldnotverifyyouremail" translatable="false">onFailure: Nous n\'avons pas pu vérifier votre adresse e-mail</string>
+    <string name="Error" translatable="false">Erreur !</string>
+    <string name="Anemailhasbeensenttoresetyourpasswordcheckyourinbox" translatable="false">Un e-mail a été envoyé pour réinitialiser votre mot de passe, vérifiez votre boîte de réceptionAn email has been sent to reset your password check your inbox</string>
+    <string name="Theresetpasswordemailcouldnotbesent" translatable="false">L\'e-mail de réinitialisation du mot de passe n\'a pas pu être envoyé</string>
+    <string name="Pleaseenteryouremail" translatable="false">Veuillez entrer votre e-mail</string>
+    <string name="Youhaveanewreminder" translatable="false">Vous avez un nouveau rappel</string>
+    <string name="Tasksave" translatable="false">Tâche enregistrée</string>
+    <string name="Taskcompleted" translatable="false">Tâche terminée</string>
+    <string name="UNDO" translatable="false">ANNULER</string>
+    <string name="TaskArchived" translatable="false">Tâche archivée</string>
+    <string name="btnsave">Enregistrer</string>
+    <string name="Soon">Bientôt</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="desde">desde</string>
+    <string name="hasta">HASTA</string>
+    <string name="av_lo_ovalle">av lo ovalle</string>
+
+</resources>
