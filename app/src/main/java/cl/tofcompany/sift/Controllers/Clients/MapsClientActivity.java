@@ -65,7 +65,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import cl.tofcompany.sift.Controllers.MainActivity;
+import cl.tofcompany.sift.Controllers.Logins.MainActivity;
 import cl.tofcompany.sift.Providers.AuthProvider;
 import cl.tofcompany.sift.Providers.ClientBookingProvider;
 import cl.tofcompany.sift.Providers.ClientProvider;

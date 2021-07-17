@@ -1,18 +1,18 @@
-package cl.tofcompany.sift.Controllers;
-
-import androidx.appcompat.app.AppCompatActivity;
+package cl.tofcompany.sift.Controllers.Logins;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import cl.tofcompany.sift.Controllers.Clients.MapsClientActivity;
 import cl.tofcompany.sift.Controllers.Drivers.MapsDriverActivity;
+import cl.tofcompany.sift.Controllers.Optionderegistros.layout_signin;
 import cl.tofcompany.sift.R;
 
 

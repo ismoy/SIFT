@@ -1,4 +1,4 @@
-package cl.tofcompany.sift.Controllers;
+package cl.tofcompany.sift.Controllers.Clients;
 
 import android.os.Bundle;
 import android.widget.Button;

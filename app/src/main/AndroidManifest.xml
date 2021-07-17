@@ -21,20 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/BgTheme"
         tools:ignore="ExtraText">
-        <activity android:name=".testpago"></activity>
+        <activity android:name=".Controllers.Clients.testpago"/>
         <activity android:name=".Controllers.Clients.itempagarcongoogle" />
-        <activity
-            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="${applicationId}.braintree" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Controllers.Drivers.TasaFinalizacionServicios"
             android:parentActivityName=".Controllers.Drivers.MapsDriverActivity" />
@@ -121,34 +109,31 @@
             android:theme="@style/BgTheme" />
         <activity
             android:name=".Controllers.Drivers.RegisterDriverActivity"
-            android:parentActivityName=".Controllers.layout_signin"
+            android:parentActivityName=".Controllers.Optionderegistros.layout_signin"
             android:theme="@style/BgTheme" />
         <activity
-            android:name=".Controllers.Login"
-            android:parentActivityName=".Controllers.layout_signin"
+            android:name=".Controllers.Logins.Login"
+            android:parentActivityName=".Controllers.Optionderegistros.layout_signin"
             android:theme="@style/BgTheme" />
         <activity
-            android:name=".Controllers.layout_signin"
-            android:parentActivityName=".Controllers.layout_signin"
+            android:name=".Controllers.Optionderegistros.layout_signin"
+            android:parentActivityName=".Controllers.Optionderegistros.layout_signin"
             android:theme="@style/BgTheme" />
         <activity
-            android:name=".Controllers.FeedbackActivity"
+            android:name=".Controllers.Feedback.FeedbackActivity"
             android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
         <activity
-            android:name=".Controllers.ProfileActivity"
-            android:parentActivityName=".Controllers.Clients.MapsClientActivity" />
-        <activity
-            android:name=".Controllers.MainActivity"
+            android:name=".Controllers.Logins.MainActivity"
             android:theme="@style/BgTheme" />
         <activity
-            android:name=".Controllers.ForgotPassword"
-            android:parentActivityName=".Controllers.MainActivity" />
+            android:name=".Controllers.Logins.ForgotPassword"
+            android:parentActivityName=".Controllers.Logins.MainActivity" />
         <activity
             android:name=".Controllers.Clients.Register"
-            android:parentActivityName=".Controllers.layout_signin"
+            android:parentActivityName=".Controllers.Optionderegistros.layout_signin"
             android:theme="@style/BgTheme" />
         <activity
-            android:name=".Controllers.Splash_Screen"
+            android:name=".Controllers.SplashScreen.Splash_Screen"
             android:theme="@style/SplashTeme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

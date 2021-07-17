@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:theme="@style/SplashTeme"
-    tools:context=".Controllers.layout_signin">
+    tools:context=".Controllers.Optionderegistros.layout_signin">
 
 
     <io.github.florent37.shapeofview.shapes.TriangleView

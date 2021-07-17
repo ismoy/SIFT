@@ -1,4 +1,4 @@
-package cl.tofcompany.sift.Controllers;
+package cl.tofcompany.sift.Controllers.SplashScreen;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +11,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import cl.tofcompany.sift.Controllers.Logins.Login;
+import cl.tofcompany.sift.Controllers.Logins.MainActivity;
 import cl.tofcompany.sift.R;
 
 

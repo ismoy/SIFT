@@ -1,4 +1,4 @@
-package cl.tofcompany.sift.Controllers;
+package cl.tofcompany.sift.Controllers.Logins;
 
 import android.app.ProgressDialog;
 import android.content.Intent;

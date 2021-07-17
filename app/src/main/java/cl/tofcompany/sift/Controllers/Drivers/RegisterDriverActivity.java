@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import cl.tofcompany.sift.Controllers.Login;
+import cl.tofcompany.sift.Controllers.Logins.Login;
 import cl.tofcompany.sift.Model.Driver;
 import cl.tofcompany.sift.Providers.AuthProvider;
 import cl.tofcompany.sift.Providers.DriverProvider;

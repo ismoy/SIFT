@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorReady"
-    tools:context="cl.tofcompany.sift.Controllers.FeedbackActivity">
+    tools:context=".Controllers.Feedback.FeedbackActivity">
 
 
     <androidx.appcompat.widget.Toolbar

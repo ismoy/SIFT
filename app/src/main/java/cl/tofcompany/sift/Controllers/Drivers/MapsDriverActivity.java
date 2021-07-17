@@ -48,7 +48,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import cl.tofcompany.sift.Controllers.MainActivity;
+import cl.tofcompany.sift.Controllers.Logins.MainActivity;
 import cl.tofcompany.sift.Providers.AuthProvider;
 import cl.tofcompany.sift.Providers.ClientBookingProvider;
 import cl.tofcompany.sift.Providers.DriverProvider;

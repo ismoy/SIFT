@@ -13,6 +13,8 @@ public class ConnectWithSIFT extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_with_sift);
+        //llamar la clase de MyToolbar y lo damos la accion show y de cimos en esta actividad y ponemos un titulo
+        //y activamos la opcion para volver atras
         MyToolbar.show(this,"",true);
     }
 }
