@@ -32,41 +32,64 @@ public class Register extends AppCompatActivity {
 
     //definamos cada campos del activity con sus nombres
     EditText musername, mEmail, mPassword, mrepetpassword;
+    //variable btn registrar
     Button mRegisterBtn;
+    //variable dialog
     private ProgressDialog mDialog;
-    /*sharedpreferences es para saber cual usuario que estan registrando para guardarlo en BD*/
+    /*sharedpreferences es para saber cual usuario que estan registrando para enviarlo a su formulario de registro*/
     SharedPreferences mPreferences;
     //authprovider viene de la clase AuthProvider
     AuthProvider mAuthProvider;
     //Clientprovider viene de la clase ClientProvider
      ClientProvider mClientProvider;
+    //firebaseauth
     FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        mPreferences = getApplication().getSharedPreferences("typeUser",MODE_PRIVATE);
-        //asignamos cada campos con sus respectivos id
-        musername = findViewById(R.id.username);
-        mEmail = findViewById(R.id.correo);
-        mPassword = findViewById(R.id.password);
-        mrepetpassword = findViewById(R.id.repeatpassword);
-        mRegisterBtn = findViewById(R.id.btn_registrar);
-        mDialog = new ProgressDialog(this);
-        mAuthProvider =  new AuthProvider();
-        mClientProvider = new ClientProvider();
-        fAuth = FirebaseAuth.getInstance();
-        MyToolbar.show(this,"Register",true);
-        mRegisterBtn.setOnClickListener(v -> clickRegister());
-
+       init();
 
     }
+    //aqui estan las inicializaciones de los variable
+    private void init(){
+        //recibiendo el sharedpreferences
+        mPreferences = getApplication().getSharedPreferences("typeUser",MODE_PRIVATE);
+        //asignamos campo username con sus respectivos id
+        musername = findViewById(R.id.username);
+        //asignamos campo email con sus respectivos id
+        mEmail = findViewById(R.id.correo);
+        //asignamos campo password con sus respectivos id
+        mPassword = findViewById(R.id.password);
+        //asignamos campo repetir contraseña con sus respectivos id
+        mrepetpassword = findViewById(R.id.repeatpassword);
+        //asignamos el boton con sus respectivos id
+        mRegisterBtn = findViewById(R.id.btn_registrar);
+        //iniciamos el progressDialog
+        mDialog = new ProgressDialog(this);
+        //iniciamos la clase AuthProvider
+        mAuthProvider =  new AuthProvider();
+        //iniciamos la clase ClientProvider
+        mClientProvider = new ClientProvider();
+        //iniciamos FirebaseAuth
+        fAuth = FirebaseAuth.getInstance();
+        //llamando mi toolbar
+        MyToolbar.show(this,"Register",true);
+        //aplicamos un evento onclick en el boton
+        mRegisterBtn.setOnClickListener(v ->
+                //metodo para registrar
+                clickRegister());
 
+    }
+    //metodo para registrar el usuario y validar los campos
     private void clickRegister() {
-        //definemos los variables de cada campo para poder validarlos
+        //creando un variable para toma el valor del campo name
         final String name = musername.getText().toString().trim();
+        //creando un variable para toma el valor del campo email
         final String email = mEmail.getText().toString().trim();
+        //creando un variable para toma el valor del campo password
         final String password = mPassword.getText().toString().trim();
+        //creando un variable para toma el valor del campo password2
         final String password2 = mrepetpassword.getText().toString().trim();
         //Validamos el campo nombre para que no esta vacio
         if (TextUtils.isEmpty(name)) {
@@ -120,20 +143,29 @@ public class Register extends AppCompatActivity {
        /* Intent i = new Intent(this , MainActivity.class);
         startActivity(i);*/
     }
-
+    //metodo para registrar recibe el name y el email y el password
     void register(final String name,final String email,String password,String password2) {
+        //entramos en lacse AuthProvider ejecutamos el metodo register recibe email y password
+        //y luego agregamos el evento addOnCompleteListener
         mAuthProvider.register(email , password).addOnCompleteListener(task -> {
+            //hide el dialog
             mDialog.dismiss();
             //aseguramos que el processo sea exitoso y enviamos mensaje al usuario al contrario enviamos error
             if (task.isSuccessful()) {
+                //creamos un variable id para sacar el id en firebase
                 String id = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+                //llamando el metodo cliente y lo pasamos el id ,el nombre,el email, y los password
                 Client client = new Client(id,name,email,password,password2);
+                //aqui registramos el cliente si todos es ok
                 create(client);
-                    // si la tarrea fue exitosa enviamos un correo de confirmation al usuario para verificar su cuenta
+                //aqui estamos tomando el usuario que esta registrando con el metodo de firebase getCurrentUser
                     FirebaseUser user = fAuth.getCurrentUser();
+                    //definemos el idioma cuando vamos a enviar el correo de verificacion en mi caso es español
                     fAuth.setLanguageCode("es");
+                    //aseguremos que es usuario no esta vacio
                     assert user != null;
-                    user.sendEmailVerification().addOnCompleteListener(task1 -> Toast.makeText(Register.this , R.string.Youraccounthasbeencreatedsuccessfully_Checkyouremailtoactivatetheaccount , Toast.LENGTH_LONG).show()).addOnFailureListener(new OnFailureListener() {
+                // si la tarrea fue exitosa enviamos un correo de confirmation al usuario para verificar su cuenta
+                user.sendEmailVerification().addOnCompleteListener(task1 -> Toast.makeText(Register.this , R.string.Youraccounthasbeencreatedsuccessfully_Checkyouremailtoactivatetheaccount , Toast.LENGTH_LONG).show()).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             String TAG = "";
@@ -143,69 +175,41 @@ public class Register extends AppCompatActivity {
                     });
 
             } else {
+                //mensaje en case de error
                 Toast.makeText(Register.this , R.string.Error + Objects.requireNonNull(task.getException()).getMessage() , Toast.LENGTH_LONG).show();
             }
         });
     }
+    //metodo para crear los clientes en firebas
 void create(Client client){
+        //llamamos la clase ClientProvider ejecutemos el metodo create eso recibe el client del modelo y lo pasamos un evento
         mClientProvider.create(client).addOnCompleteListener(task -> {
+            //aseguramos que la tarea fue exitosa
             if (task.isSuccessful()){
+                //creamos un variable user para recibir el usuario que esta registrando
                 String user = mPreferences.getString("user","");
+                //aseguramos si el usuario es un cliente
                 if (user.equals("client")){
+                    //en caso es un cliente creamos un intent
                     Intent intent = new Intent(Register.this, Login.class);
+                    //esos es para no poder volver al activivad de registro despues de salir
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    //iniciamos el intent
                     startActivity(intent);
                 }else{
+                    //en caso es un conductor lo enviamos en esos intent
                     Intent intent = new Intent(Register.this, Login.class);
+                    //esos es para no poder volver al activivad de registro despues de salir
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    //iniciamos el intent
                     startActivity(intent);
                 }
             }else {
+                //mensaje de error
                 Toast.makeText(Register.this, R.string.Error + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 }
-    //metodo para guardar automaticamente en realtime database
-    /*public void saveUser(String id, String name, String email,String password,String password2) {
-        String selectedUser = mPreferences.getString("user","");
-        User user = new User();
-        user.setEmail(email);
-        user.setName(name);
-        user.setPassword(password);
-        user.setPassword2(password2);
-        if (selectedUser.equals("driver")) {
-            database.child("Users").child("Drivers").child(id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(Register.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(Register.this, "Fallo el registro", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-        else if (selectedUser.equals("client")){
-            database.child("Users").child("Clients").child(id).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(Register.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(Register.this, "Fallo el registro", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-        }
-
-
-    }
-*/
-
-
-
     //Validacion regex para los campos
     public static boolean validarletras(String datos) {
         return datos.matches("[a-zA-Z ]*");
