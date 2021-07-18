@@ -3,10 +3,8 @@ package cl.tofcompany.sift.Controllers.Clients;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,18 +33,29 @@ import cl.tofcompany.sift.includes.MyToolbar;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UpdateProfile extends AppCompatActivity {
-
+    //variable CircleImageView
     private CircleImageView miImageViewprofile;
+    //variable btn
     private Button mButtonupdate;
+    //variable Textview name
     private TextView mTextViewname;
+    //variable Textview password
     private TextView mTextViewpassword;
+    //variable clase ClientProvider
     private ClientProvider mClientProvider;
+    //variable clase AuthProvider
     private AuthProvider mAuthProvider;
+    //variable clase File
     private File mimagefile;
+    //variable imagen
     private String mimage;
+    //variable cuando para acceder al galeria lo iniciamos en 1
     private final int GALLERY_REQUEST = 1;
+    //progressDialog
     private ProgressDialog mProgressDialog;
+    //variable de name
     private String mname;
+    //variable clase ImagesProvider
     private ImagesProvider mImageProvider;
 
     @Override
@@ -64,18 +72,10 @@ public class UpdateProfile extends AppCompatActivity {
         mImageProvider = new ImagesProvider("client_images");
         mProgressDialog = new ProgressDialog(this);
         getClientInfo();
-        mButtonupdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateProfile();
-            }
-        });
-        miImageViewprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGallery();
-            }
-        });
+        mButtonupdate.setOnClickListener(v ->
+                updateProfile());
+        miImageViewprofile.setOnClickListener(v ->
+                openGallery());
     }
 
     private void openGallery() {
@@ -141,22 +141,16 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                 if (task.isSuccessful()) {
-                    mImageProvider.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            String image = uri.toString();
-                            Client client = new Client();
-                            client.setImage(image);
-                            client.setName(mname);
-                            client.setId(mAuthProvider.getId());
-                            mClientProvider.update(client).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    mProgressDialog.dismiss();
-                                    Toast.makeText(UpdateProfile.this, "Su informacion se actualizo correctamente", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                        }
+                    mImageProvider.getStorage().getDownloadUrl().addOnSuccessListener(uri -> {
+                        String image = uri.toString();
+                        Client client = new Client();
+                        client.setImage(image);
+                        client.setName(mname);
+                        client.setId(mAuthProvider.getId());
+                        mClientProvider.update(client).addOnSuccessListener(aVoid -> {
+                            mProgressDialog.dismiss();
+                            Toast.makeText(UpdateProfile.this, "Su informacion se actualizo correctamente", Toast.LENGTH_SHORT).show();
+                        });
                     });
                 }
                 else {
