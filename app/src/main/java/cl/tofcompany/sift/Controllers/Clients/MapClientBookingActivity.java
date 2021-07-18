@@ -121,9 +121,9 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
     private void init(){
         //inciando el variable de supportfragment con su id
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        //inciando la classe authprovider
+        //inciando la clase authprovider
         mAuthProvider = new AuthProvider();
-        //inciando la classe LocationServices y tomamos el metodo FusedLocationProviderClient y decimos que se muestra en esta actividad this
+        //inciando la clase LocationServices y tomamos el metodo FusedLocationProviderClient y decimos que se muestra en esta actividad this
         mfuLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         //inciando la classe geoprovider y lo pasamos el nodo drivers_working de firebase
         mGeofireProvider = new GeofireProvider("drivers_working");
@@ -151,7 +151,7 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
         mapFragment.getMapAsync(this);
         //aseguramos que esta inicializado
         if (!Places.isInitialized()) {
-            //pasamos al place la inicializacion eso ecibe un contexto y luego lo pasamos el api key de google maps
+            //pasamos al place la inicializacion eso recibe un contexto y luego lo pasamos el api key de google maps
             Places.initialize(getApplicationContext(), getResources().getString(R.string.google_maps_key));
         }
         //metodo del estado

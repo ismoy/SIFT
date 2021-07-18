@@ -13,6 +13,7 @@ public class PagoEnEfectivoClient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pago_en_efectivo_client);
+        //llamado de mi toolbar
         MyToolbar.show(this,"",true);
     }
 }
