@@ -38,9 +38,9 @@ public class CalificationDriver extends AppCompatActivity {
     private ClientBookingProvider mClientBookingProvider;
     //defimos la clase de Authprovider
     private AuthProvider mAuthProvider;
-    //defimos la clase de historyBooking
+    //definemos la clase de historyBooking
     private HistoryBooking mHistoryBooking;
-    //defimos la clase de HistoryBookingProvider
+    //definemos la clase de HistoryBookingProvider
     private HistoryBookingProvider mHistoryBookingProvider;
    //iniciamos la calificacion en 0
     private float mCalification = 0;
@@ -49,6 +49,10 @@ public class CalificationDriver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calification_driver);
+       init();
+    }
+    //metodo donde se inicializo las variables y metodos
+    private void init(){
         //llamado del destino con su id
         mTextViewDestination = findViewById(R.id.textviewdestinationdrivercalification);
         //llamado del origen con su id
@@ -67,15 +71,15 @@ public class CalificationDriver extends AppCompatActivity {
         mAuthProvider = new AuthProvider();
         //llamamos el metodo setonratinbarchangeListener para la barra de calificacion
         mRatinBar.setOnRatingBarChangeListener((ratingBar, calification, b) -> mCalification = calification);
-       //llamado el metodo set onclick listener para el button
+        //llamado el metodo set onclick listener para el button
         mButtonCalification.setOnClickListener(view -> calificate());
         //metodo para tomar los datos de los clientes que estan buscando
         getClientBooking();
     }
     //metodo para tomar los datos de los clientes que estan buscando
     private void getClientBooking() {
-        //llamando la clase clientbookingprovider y tomamos el metodo get clientbooking y eso recibe el id del usuario
-        //eso lo tenemos en mauthprovider y tomamos el id y agregamos un evento de firebase addlisternerforsingleresul
+        //llamando la clase ClientBookingProvider y tomamos el metodo get clientbooking y eso recibe el id del usuario
+        //eso lo tenemos en mAuthProvider y tomamos el id y agregamos un evento de firebase addlisternerforsingleresul
         mClientBookingProvider.getClientBooking(mAuthProvider.getId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -91,7 +95,7 @@ public class CalificationDriver extends AppCompatActivity {
                     mTextViewprice.setText(String.format("%.1f",clientBooking.getPrice()) + " CLP ");
                     //enviamos el destino que encontramos en firebase en la vista
                     mTextViewDestination.setText(clientBooking.getDestination());
-                    //ahora en entramos en la clase de historybooking para tomar los datos que tiene agregado
+                    //ahora  entramos en la clase de historybooking para tomar los datos que tiene agregado
                     mHistoryBooking = new HistoryBooking(
                             //tomamos el id de historia del viaje
                             clientBooking.getIdHistoryBooking(),
@@ -135,8 +139,8 @@ public class CalificationDriver extends AppCompatActivity {
             mHistoryBooking.setCalificationDriver(mCalification);
             //enviamos el tiempo y la hora y la fecha en la vista
             mHistoryBooking.setTimestamp(new Date().getTime());
-            //ahora entramos en la clase de historybookingprovider tomamos el metodo gethistorybooking
-            //eso recibe el id de historybooking lo tenemos en mHistoryBooking y tomamos su id y luego agrregamos
+            //ahora entramos en la clase de HistoryBookingProvider tomamos el metodo gethistorybooking
+            //eso recibe el id de historybooking lo tenemos en mHistoryBooking y tomamos su id y luego agregamos
             //un metodo de firebase addListenerForSingleValue
             mHistoryBookingProvider.getHistoryBooking(mHistoryBooking.getIdHistoryBooking()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -153,7 +157,7 @@ public class CalificationDriver extends AppCompatActivity {
                             Intent intent = new Intent(CalificationDriver.this, MapsClientActivity.class);
                             //iniciamos el intent
                             startActivity(intent);
-                            //ponemos finsh para finalizar la actividad
+                            //ponemos finish para finalizar la actividad
                             finish();
                         });
                     } else {
@@ -166,7 +170,7 @@ public class CalificationDriver extends AppCompatActivity {
                             Intent intent = new Intent(CalificationDriver.this, MapsClientActivity.class);
                             //iniciamos el intent
                             startActivity(intent);
-                            //ponemos finsh para finalizar la actividad
+                            //ponemos finish para finalizar la actividad
                             finish();
                         });
                     }

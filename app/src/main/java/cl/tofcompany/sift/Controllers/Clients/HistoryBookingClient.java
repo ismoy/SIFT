@@ -27,18 +27,21 @@ public class HistoryBookingClient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_booking_client);
-        //llamamos a l toolbar
+        init();
+    }
+    //aqui estan inicializados los variable y metodos
+    private void init(){
+        //llamamos al toolbar
         MyToolbar.show(this,"SIFT",true);
-        //inciamos el recyclerview con si id
+        //iniciamos el recyclerview con si id
         mRecyclerView = findViewById(R.id.recyclerviewhistoryclient);
         //llamamos el LineaLayoutManager para mostrarlo en este contexto this
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         //enviamos todos qye viene en recyclerview al layoutmanager
         mRecyclerView.setLayoutManager(linearLayoutManager);
     }
-
     @Override
-    //metodo onstate
+    //metodo onstat
     protected void onStart() {
         super.onStart();
         //iniciando la classe de AuthProvider
@@ -49,7 +52,7 @@ public class HistoryBookingClient extends AppCompatActivity {
                 .child("HistoryBooking")
                 //entramos en el nodo idClient
                 .orderByChild("idClient")
-                //tomamos el id
+                //igualamos al id
                 .equalTo(mAuthProvider.getId());
         //alli empezamos a llenar firebaseRecyclerOptions
         FirebaseRecyclerOptions<HistoryBooking> options = new FirebaseRecyclerOptions.Builder<HistoryBooking>()

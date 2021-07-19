@@ -55,28 +55,47 @@ import cl.tofcompany.sift.Providers.DriverProvider;
 import cl.tofcompany.sift.Providers.GeofireProvider;
 import cl.tofcompany.sift.Providers.TokenProvider;
 import cl.tofcompany.sift.R;
-
+//implementamos el OnMapReadyCallback
 public class MapsDriverActivity extends AppCompatActivity implements OnMapReadyCallback {
-
+    //variable del google map
     private GoogleMap mmap;
+    //variable del supportfragment
     private SupportMapFragment mapFragment;
+    //variable de la clase GeofireProvider
     private GeofireProvider mGeofireProvider;
+    //variable de la clase LocationRequest
     private LocationRequest mLocationRequest;
+    //variable de la clase FusedLocationProviderClient
     private FusedLocationProviderClient mfuLocationProviderClient;
+    //variable definido para inicializar el codigo de la locacion en 1
     private final static int LOCATION_REQUEST_CODE = 1;
+    //variable definido para inicializar el settings code en 2
     private final static int SETTINGS_REQUEST_CODE = 2;
+    //variable del marcador del driver
     private Marker mMarker;
+    //variable del btn conectar
     private Button mButtonConnect;
+    //variable boleana par saber si se conecto o no lo iniciamos en false
     private boolean mIsConnect = false;
+    //variable para tomar la latitude y la longitude en tiempo real
     private LatLng mCurrentLatLng;
+    //variable de la clase AuthProvider
     private AuthProvider mAuthProvider;
+    //variable de la clase TokenProvider
     private TokenProvider mTokenProvider;
+    //variable Listener para escuchar un evento de firebase
     private ValueEventListener mListener;
+    //variable de DrawerLayout
     private DrawerLayout drawerLayout;
+    //variable de la clase DriverProvider
     DriverProvider mDriverProvider;
+    //variable TextView username y email
     private TextView username, memail;
+    //variable ImageView picture
     private ImageView picture;
+    //variable para guardar el id del conductor
     private String midDriver ;
+    //variable de la clase ClientBookingProvider
     private ClientBookingProvider mClientBookingProvider;
 
 

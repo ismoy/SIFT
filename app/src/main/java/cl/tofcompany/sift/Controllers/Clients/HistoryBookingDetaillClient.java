@@ -35,11 +35,11 @@ public class HistoryBookingDetaillClient extends AppCompatActivity {
     private CircleImageView mcircleImageView;
     //variable cicle image
     private CircleImageView mcircleImageViewback;
-    //variable para recibir el itent de idextra
+    //variable para recibir el intent de idextra
     private String mExtraId;
-    // variale de la clase HistoryBookingProvider
+    // variable de la clase HistoryBookingProvider
     private HistoryBookingProvider mHistoryBookingProvider;
-    // variale de la clase DriverProvider
+    // variable de la clase DriverProvider
     private DriverProvider mDriverProvider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +57,7 @@ public class HistoryBookingDetaillClient extends AppCompatActivity {
         mTextViewOrigin = findViewById(R.id.textvieworigenhistorybookingdetaillclient);
         //iniciamos el variable destino con su id
         mTextViewDestination = findViewById(R.id.textviewdestinationhistorybookingdetaillclient);
-        //iniciamos el variable califiacion con su id
+        //iniciamos el variable calificacion con su id
         mTextViewCalification = findViewById(R.id.textviewcalificationhistorybookingdetaillclient);
         //iniciamos el barra de calificacion name con su id
         mRatingBar = findViewById(R.id.ratingBarhistorybookingdetailclient);
@@ -72,31 +72,32 @@ public class HistoryBookingDetaillClient extends AppCompatActivity {
         //iniciamos el variable image view con su id
         mcircleImageViewback = findViewById(R.id.circle_imagebackhistorybookingdetaill);
         //aplicamos un evento click sobre el imagenviewback
-        mcircleImageViewback.setOnClickListener(v -> finish());
-        //tomar las historias
+        mcircleImageViewback.setOnClickListener(v ->
+                finish());
+        //metodo para tomar las historias
         getHistoryBooking();
     }
     //metodo para tomar las historias del cliente
     private void getHistoryBooking() {
         //entramos en la clase de HistoryBookingProvider y tomamos en metodo de getHistoryBooking
-        //eso recibe un id y el id lo tenemos mextraid y agregamos un evento de firebase
+        //eso recibe un id y el id lo tenemos mExtraId y agregamos un evento de firebase
         mHistoryBookingProvider.getHistoryBooking(mExtraId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 //aseguramos que el datos existe
                 if (snapshot.exists()){
-                    //asignamos la classe de HistoryBooking los que vienen en firebase mediante el snapshot
+                    //asignamos la clase de HistoryBooking a los datos que vienen en firebase mediante el snapshot
                     //y tomamos su valor y lo enviamos al HistoryBooking.class
                     HistoryBooking historyBooking = snapshot.getValue(HistoryBooking.class);
-                    //enviamos ne la vista del campo origen el origen que encuentro
+                    //enviamos en la vista del campo origen el origen que encuentro
                     mTextViewOrigin.setText(historyBooking.getOrigin());
                     //enviamos ne la vista del campo destino el destino que encuentro
                     mTextViewDestination.setText(historyBooking.getDestination());
                     //enviamos ne la vista del campo calification la calification que encuentro
                     mTextViewCalification.setText("Tu calificacion: " +historyBooking.getCalificationDriver());
-                    //preguntamos si en el noto de calificationClient si ya hay una calificacion
+                    //preguntamos si en el nodo de calificationClient si ya hay una calificacion
                     if (snapshot.hasChild("calificationClient")) {
-                        //simplemente enviamos la camifiacion que hay en la barra de calificacion
+                        //simplemente enviamos la calificacion que hay en la barra de calificacion
                         mRatingBar.setRating((float) historyBooking.getCalificationClient());
                     }
                     //entramos en la classe de DriverProvider y tomamos el metodo getDriver eso recibe un
@@ -114,7 +115,7 @@ public class HistoryBookingDetaillClient extends AppCompatActivity {
                                 if (snapshot.hasChild("image")){
                                     //creamos una variable image para sacar el imagen en firebase
                                     String image = snapshot.child("image").getValue().toString();
-                                    //primero lo procesamos con picasso y luego lo enviamos en la visata
+                                    //primero lo procesamos con picasso y luego lo enviamos en la vista
                                     Picasso.get().load(image).into(mcircleImageView);
                                 }
 

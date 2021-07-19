@@ -61,15 +61,15 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
     private LocationRequest mLocationRequest = new LocationRequest();
     //variable del fusedlocationproviderclient
     private FusedLocationProviderClient mfuLocationProviderClient;
-    //variable del marker
+    //variable del marcador del conductor
     private Marker mMarkerDriver;
-    //variable del Authprovider
+    //variable de la clase Authprovider
     AuthProvider mAuthProvider;
-    //variable del geofireprovider
+    //variable de la clase GeofireProvider
     private GeofireProvider mGeofireProvider;
-    //variable booleana para saber si entro por primera vez
+    //variable boleana para saber si entro por primera vez esta inicializado en true
     private boolean mIsFirstTime = true;
-    //variable del placesclient
+    //variable del placesclient viene de la api
     private PlacesClient mPlacesClient;
     //variable del origen
     private String mOrigin;
@@ -93,9 +93,9 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
     private TextView mTextViewdestination;
     //variable clientbookingprovider
     private ClientBookingProvider mClientBookingProvider;
-    //variable list laltlon
+    //variable list laltlong
     private List<LatLng> mpolyllineList;
-    //variable polylyneoption
+    //variable polylyneoption proviene de la api de google
     private PolylineOptions mPolylineOptions;
     //variable googleapiprovider
     private GoogleApiProvider mGoogleApiProvider;
@@ -121,31 +121,31 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
     private void init(){
         //inciando el variable de supportfragment con su id
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        //inciando la clase authprovider
+        //iniciando la clase authprovider
         mAuthProvider = new AuthProvider();
-        //inciando la clase LocationServices y tomamos el metodo FusedLocationProviderClient y decimos que se muestra en esta actividad this
+        //iniciando la clase LocationServices y tomamos el metodo FusedLocationProviderClient y decimos que se muestra en esta actividad this
         mfuLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-        //inciando la classe geoprovider y lo pasamos el nodo drivers_working de firebase
+        //iniciando la classe geoprovider y lo pasamos el nodo drivers_working de firebase
         mGeofireProvider = new GeofireProvider("drivers_working");
-        //inciando la clase de token
+        //iniciando la clase de token
         mTokenProvider = new TokenProvider();
-        //inciando el variable de txt driverbooking con su id
+        //iniciando el variable de txt driverbooking con su id
         mTextViewDriverBooking = findViewById(R.id.textviewdriverbooking);
-        //inciando el variable de txt emaildriverbooking con su id
+        //iniciando el variable de txt emaildriverbooking con su id
         mTextViewEmailDriverBooking = findViewById(R.id.textviewemaildriverbooking);
-        //inciando el variable de txt origen con su id
+        //iniciando el variable de txt origen con su id
         mtextVieworigin = findViewById(R.id.textvieworigindriverbooking);
-        //inciando el variable de txt destino con su id
+        //iniciando el variable de txt destino con su id
         mTextViewdestination = findViewById(R.id.textviewdestinationdriverbooking);
-        //inciando la classe clientbookingprovider
+        //iniciando la classe clientbookingprovider
         mClientBookingProvider = new ClientBookingProvider();
-        ////inciando la classe googleApiProvider eso recibe un contexto que es esta actividad this
+        //iniciando la classe googleApiProvider eso recibe un contexto que es esta actividad this
         mGoogleApiProvider = new GoogleApiProvider(MapClientBookingActivity.this);
-        //inciando la classe de driverprovider
+        //iniciando la classe de driverprovider
         mDriverProvider = new DriverProvider();
-        //inciando el variable de txt statusbooking con su id
+        //iniciando el variable de txt statusbooking con su id
         mTextViewStatusBooking = findViewById(R.id.textviewstatusbooking);
-        //inciando el variable de imageview con su id
+        //iniciando el variable de imageview con su id
         mimageviewdriverbooking = findViewById(R.id.imageviewdriverbooking);
         //lo pasamos el metro de getMapsAsync recibe un callback que es esta actividad this
         mapFragment.getMapAsync(this);
@@ -385,7 +385,7 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
                     mPolylineOptions.startCap(new SquareCap());
                     //el jointType esta  usado por todos los polyline excepto el inicio y el final del vertice
                     mPolylineOptions.jointType(JointType.ROUND);
-                    //enciar todas las opciones al polilynelist
+                    //iniciar todas las opciones al polilynelist
                     mPolylineOptions.addAll(mpolyllineList);
                     //agregamos los polyline en el mapa
                     mmap.addPolyline(mPolylineOptions);
