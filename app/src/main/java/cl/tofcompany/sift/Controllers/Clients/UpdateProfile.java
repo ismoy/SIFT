@@ -64,7 +64,6 @@ public class UpdateProfile extends AppCompatActivity {
         setContentView(R.layout.activity_update_profile);
        init();
     }
-
     //aqui iniciamos los variable y las clases
     private void init(){
         //iniciamos el image con su id
@@ -173,7 +172,7 @@ public class UpdateProfile extends AppCompatActivity {
             mProgressDialog.setMessage("Espere un momento...");
             //desactivamos la opcion del Touch para que el usuario no pueda cancelar esta operacion
             mProgressDialog.setCanceledOnTouchOutside(false);
-            //mestramos el dialog
+            //muestramos el dialog
             mProgressDialog.show();
             //guardamos los datos si todos estan ok
             saveImage();
@@ -194,7 +193,7 @@ public class UpdateProfile extends AppCompatActivity {
                 //pregunta si la tarea fue exitosa
                 if (task.isSuccessful()) {
                     //llamamos la clase ImageProvider ejecutamos el metodo getStorage y el getDownloadUrl()
-                    //eso ricibe el uri como parametro
+                    //eso recibe el uri como parametro
                     mImageProvider.getStorage().getDownloadUrl().addOnSuccessListener(uri -> {
                         //guardamos en image el uri
                         String image = uri.toString();
@@ -216,7 +215,7 @@ public class UpdateProfile extends AppCompatActivity {
                     });
                 }
                 else {
-                    //,ensaje error
+                    //mensaje error
                     Toast.makeText(UpdateProfile.this, "Hubo un error al subir la imagen", Toast.LENGTH_SHORT).show();
                 }
             }

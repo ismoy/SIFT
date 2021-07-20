@@ -33,45 +33,72 @@ public class RegisterDriverActivity extends AppCompatActivity {
 
     //definamos cada campos del activity con sus nombres
     EditText musername, mEmail, mPassword, mrepetpassword,mvehicleBrand,mvehiclePlate;
+    //variable btn registrar
     Button mRegisterBtn;
+    //variable progressDialog
     private ProgressDialog mDialog;
     //authprovider viene de la clase AuthProvider
     AuthProvider mAuthProvider;
     //Clientprovider viene de la clase ClientProvider
      DriverProvider mDriverProvider;
+     //variable SharedPreferences
     SharedPreferences mPreferences;
+    //variable FirebaseAuth
     FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_driver);
-        //asignamos cada campos con sus respectivos id
+       init();
+    }
+    private void init(){
+        //asignamos el campo  name con su respectivo id
         musername = findViewById(R.id.username);
+        //asignamos el campo  email con  su respectivo id
         mEmail = findViewById(R.id.correo);
+        //asignamos el campo  password con  su respectivo id
         mPassword = findViewById(R.id.password);
+        //asignamos el campo  password2 con  su respectivo id
         mrepetpassword = findViewById(R.id.repeatpassword);
+        //asignamos el btn registrar con  su respectivo id
         mRegisterBtn = findViewById(R.id.btn_registrar);
+        //asignamos el campo  marca con  su respectivo id
         mvehicleBrand = findViewById(R.id.marcaauto);
+        //asignamos el campo  patente con  su respectivo id
         mvehiclePlate = findViewById(R.id.placaauto);
+        //iniciamos el dialog
         mDialog = new ProgressDialog(this);
+        //iniciamos la clase AuthProvider
         mAuthProvider =  new AuthProvider();
+        //iniciamos la clase DriverProvider
         mDriverProvider = new DriverProvider();
+        //recibiendo los datos que trae el SharedPreferences
         mPreferences = getApplication().getSharedPreferences("typeUser",MODE_PRIVATE);
+        //asignamos el metodo getIntance de firebase
         fAuth = FirebaseAuth.getInstance();
-         String TAG;
+        String TAG;
+        //llamado de mi toolbar
         MyToolbar.show(this,"REGISTER",true);
-        mRegisterBtn.setOnClickListener(v -> clickRegister());
+        //agregamos el evento onclick en el boton registrar
+        mRegisterBtn.setOnClickListener(v ->
+                //metodo para registrar
+                clickRegister());
 
 
     }
-
+    //metodo para registrar
     private void clickRegister() {
-        //definemos los variables de cada campo para poder validarlos
+        //definir un variable name para guardar los que trae el campo username
         final String name = musername.getText().toString().trim();
+        //definir un variable email para guardar los que trae el campo correo
         final String email = mEmail.getText().toString().trim();
+        //definir un variable password para guardar los que trae el campo password
         final String password = mPassword.getText().toString().trim();
+        //definir un variable password2 para guardar los que trae el campo password2
         final String password2 = mrepetpassword.getText().toString().trim();
+        //definir un variable vehiculeBrand para guardar los que trae el campo marca
         final String vehicleBrand = mvehicleBrand.getText().toString().trim();
+        //definir un variable vehiclePlate para guardar los que trae el campo patente
         final String vehiclePlate = mvehiclePlate.getText().toString().trim();
         //Validamos el campo nombre para que no esta vacio
         if (TextUtils.isEmpty(name)) {
@@ -136,20 +163,28 @@ public class RegisterDriverActivity extends AppCompatActivity {
        /* Intent i = new Intent(this , MainActivity.class);
         startActivity(i);*/
     }
-
+    //metodo registrar
     void register(final String name,final String email,String password,String password2,String vehicleBrand,String vehiclePlate) {
+        //entramos en lacse AuthProvider ejecutamos el metodo register recibe email y password
+        //y luego agregamos el evento addOnCompleteListener
         mAuthProvider.register(email , password).addOnCompleteListener(task -> {
+            //hide el dialog
             mDialog.dismiss();
             //aseguramos que el processo sea exitoso y enviamos mensaje al usuario al contrario enviamos error
             if (task.isSuccessful()) {
-
+                //creamos un variable id para sacar el id en firebase
                 String id = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+                //llamando el metodo driver y lo pasamos el id ,el nombre,el email, y los password
                 Driver driver = new Driver(id,name,email,password,password2,vehicleBrand,vehiclePlate);
+                //aqui registramos el cliente si todos es ok
                 create(driver);
-                    // si la tarrea fue exitosa enviamos un correo de confirmation al usuario para verificar su cuenta
+                //aqui estamos tomando el usuario que esta registrando con el metodo de firebase getCurrentUser
                     FirebaseUser user = fAuth.getCurrentUser();
+                //definemos el idioma cuando vamos a enviar el correo de verificacion en mi caso es español
                     fAuth.setLanguageCode("es");
+                //aseguremos que es usuario no esta vacio
                     assert user != null;
+                // si la tarrea fue exitosa enviamos un correo de confirmation al usuario para verificar su cuenta
                     user.sendEmailVerification().addOnCompleteListener(task1 -> Toast.makeText(RegisterDriverActivity.this , R.string.Youraccounthasbeencreatedsuccessfully_Checkyouremailtoactivatetheaccount , Toast.LENGTH_LONG).show()).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
@@ -161,24 +196,36 @@ public class RegisterDriverActivity extends AppCompatActivity {
                     });
 
             } else {
+                //mensaje en case de error
                 Toast.makeText(RegisterDriverActivity.this , R.string.Error + Objects.requireNonNull(task.getException()).getMessage() , Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }  //metodo para crear los drivers en firebase
     void create(Driver driver){
+        //llamamos la clase DriverProvider ejecutemos el metodo create eso recibe el driver del modelo y lo pasamos un evento
         mDriverProvider.create(driver).addOnCompleteListener(task -> {
+            //aseguramos que la tarea fue exitosa
             if (task.isSuccessful()){
+                //creamos un variable user para recibir el usuario que esta registrando
                 String user = mPreferences.getString("user","");
+                //aseguramos si el usuario es un driver
                 if (user.equals("client")){
+                    //en caso es un driver creamos un intent
                     Intent intent = new Intent(RegisterDriverActivity.this, Login.class);
+                    //esos es para no poder volver al actividad de registro despues de salir
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    //iniciamos el intent
                     startActivity(intent);
                 }else{
+                    //en caso es un conductor lo enviamos en esos intent
                     Intent intent = new Intent(RegisterDriverActivity.this, Login.class);
+                    //esos es para no poder volver al actividad de registro despues de salir
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    //iniciamos el intent
                     startActivity(intent);
                 }
             }else {
+                //mensaje de error
                 Toast.makeText(RegisterDriverActivity.this, R.string.Error + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
             }
         });

@@ -180,7 +180,7 @@ public class Register extends AppCompatActivity {
             }
         });
     }
-    //metodo para crear los clientes en firebas
+    //metodo para crear los clientes en firebase
 void create(Client client){
         //llamamos la clase ClientProvider ejecutemos el metodo create eso recibe el client del modelo y lo pasamos un evento
         mClientProvider.create(client).addOnCompleteListener(task -> {
@@ -199,7 +199,7 @@ void create(Client client){
                 }else{
                     //en caso es un conductor lo enviamos en esos intent
                     Intent intent = new Intent(Register.this, Login.class);
-                    //esos es para no poder volver al activivad de registro despues de salir
+                    //esos es para no poder volver al actividad de registro despues de salir
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     //iniciamos el intent
                     startActivity(intent);

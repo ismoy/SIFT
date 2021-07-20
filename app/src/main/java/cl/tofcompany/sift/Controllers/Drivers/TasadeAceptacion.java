@@ -21,9 +21,13 @@ import cl.tofcompany.sift.R;
 import cl.tofcompany.sift.includes.MyToolbar;
 
 public class TasadeAceptacion extends AppCompatActivity {
- private AnyChartView anyChartView;
+    //variable de api Char
+    private AnyChartView anyChartView;
+    //variable de api Char
     private LineChart lineChart;
+    //variable de api Char
     private LineDataSet lineDataSet;
+    //variable para los meses
  String [] months = {"jan","feb", "Mar"};
  int[] earnings = {1,1,1};
  String [] days = {"lunes","martes", "miecoles","jueves","viernes"};
@@ -33,16 +37,24 @@ public class TasadeAceptacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasade_aceptacion);
+        //llamado mi toolbar
         MyToolbar.show(this,"",true);
+        //iniciamos el anychar con su id
         anyChartView = findViewById(R.id.any_chart_view);
+        //mostrar el grafico
         setupPieChart();
+        //iniciamos el anychar con su id
         lineChart = findViewById(R.id.lineChart);
+        //mostrar el grafico
         setupPieChart2();
 
     }
+    //metodo de grafico pie
     void setupPieChart(){
         Pie pie = AnyChart.pie();
+        //crear un lista
         List<DataEntry> dataEntries = new ArrayList<>();
+        //recorrer
         for (int i = 0; i < months.length; i++){
             dataEntries.add(new ValueDataEntry(months[i], earnings[i]));
         }
