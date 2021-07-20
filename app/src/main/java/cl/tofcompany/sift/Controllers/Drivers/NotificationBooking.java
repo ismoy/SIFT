@@ -25,42 +25,68 @@ import cl.tofcompany.sift.Providers.GeofireProvider;
 import cl.tofcompany.sift.R;
 
 public class NotificationBooking extends AppCompatActivity {
+    //variable TextView destino
 private TextView mTextViewDestination;
+    //variable TextView origen
 private TextView mTextViewOrigen;
+    //variable TextView tiempo
 private TextView mTextViewMin;
+    //variable TextView distancia
 private TextView mTextViewDistance;
+    //variable  btn aceptar
 private Button mButtonAceptar;
+    //variable btn rechazar
 private Button mButtonRechazar;
+   //variable de la clase ClientBookingProvider
 private ClientBookingProvider mClientBookingProvider;
+    //variable de la clase GeofireProvider
 private GeofireProvider mGeofireProvider;
+    //variable de la clase AuthProvider
 private AuthProvider mAuthProvider;
+   //variable para guardar el id cliente que vamos a recibir por un intent extra
 private String mExtraIdClient;
+    //variable para guardar el origin extra que vamos a recibir por un intent extra
 private String mExtraOrigen;
+    //variable para guardar el destino extra que vamos a recibir por un intent extra
 private String mExtraDestination;
+    //variable para guardar el tiempo extra que vamos a recibir por un intent extra
 private String mExtraMinute;
+    //variable para guardar el distancia extra que vamos a recibir por un intent extra
 private String mExtraDistance;
+   //variable TextView para el contador
 private TextView mTextViewCounter;
+   //variable del objeto Handler
 private Handler mHandler;
+  //variable del Objeto MediaPlayer
 private MediaPlayer mediaPlayer;
+ //iniciamos el contador en 60 segundos
 private int mcounter = 60;
-
+    //clase de interface de Runnable
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
+            //iniciar al mcounter  lo que viene en mcounter y lo restamos 1
             mcounter = mcounter -1;
+            //enviamos en la vista el valor de mcounter
             mTextViewCounter.setText(String.valueOf(mcounter));
+            //aseguramos que mcounter es mayor a 0
             if (mcounter > 0) {
+                //si es asi iniciamos el contador
                 initTimer();
             }
             else {
+                //si llega a 0 el contador cancelamos el viaje
                 cancelBooking();
             }
         }
     };
+    //ese es un escuchador de firebase lo necesitamos para parar el escuchador despues un evento
     private ValueEventListener mListener;
-
+    //iniciar el contador
     private void initTimer() {
+        //recibe el Objeto mHandler
         mHandler = new Handler();
+        //ejecutamos el metodo PostDelayed eso recibe el runnable y el tiempo en mi caso es cada segundo
         mHandler.postDelayed(runnable, 1000);
     }
 

@@ -373,6 +373,30 @@
                     android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
                     app:tint="@color/colorWhite" />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:id="@+id/layoutlogout">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/logout"
+                    android:drawableStart="@drawable/ic_baseline_logout"
+                    android:drawablePadding="10dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:padding="12dp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="48dp"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:tint="@color/colorWhite" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

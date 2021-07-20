@@ -533,10 +533,8 @@ public class MapsClientActivity extends AppCompatActivity implements OnMapReadyC
         mLocationRequest.setFastestInterval(1000);
         //la prioridad es alta
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        //aqui solicitaremos el conductor empezara en un rango de 1000 ms y cuando llega a 5 segundo
-        //si no encontra a nadie te avisara y el evento quedara escuchando por si conecto un conductor
         mLocationRequest.setSmallestDisplacement(5);
-        //iniciamos la location al encontrar driver
+        //iniciamos la location
         startLocation();
     }
 
@@ -548,16 +546,16 @@ public class MapsClientActivity extends AppCompatActivity implements OnMapReadyC
         if (requestCode == LOCATION_REQUEST_CODE) {
             //aseguramos que de verdad nos a dado los permisiones
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //asemos un chequeo en e manifest para los permisos
+                //hacemos un chequeo en el manifest para los permisos
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                    //aseguramos que el gpsdel celular de usuario esta activado
+                    //aseguramos que el gps del celular de usuario esta activado
                     if (gpsActived()) {
                         //si esta activado enviamos el cliente en la ubicacion donde esta
                         mfuLocationProviderClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
                        //activamos el puntito azul de la ubicacion de google maps
                         mmap.setMyLocationEnabled(true);
                     } else {
-                        // en caso contrario mostramos esee mesaje
+                        // en caso contrario mostramos ese mensaje
                         showAlertDialogNOGPS();
                     }
                 } else {
@@ -575,20 +573,20 @@ public class MapsClientActivity extends AppCompatActivity implements OnMapReadyC
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //aseguremos que el requestCode es igual al estado de nuesta variable arriba
-        // y tb que el gps esta activsdo
+        // y tb que el gps esta activado
         if (requestCode == SETTINGS_REQUEST_CODE && gpsActived()) {
-            //chequeamos en el manifest si de verdad tenemos la position
+            //chequeamos en el manifest si de verdad tenemos el permiso
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
             //enviamos el usuario en la ubication donde esta en el mapa
             mfuLocationProviderClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
-            //activamos el puntido de ubicacion
+            //activamos el puntito de ubicacion
             mmap.setMyLocationEnabled(true);
         }
         //en caso contrario mostramos el mensaje
         else if (requestCode == SETTINGS_REQUEST_CODE && !gpsActived()){
-            //metdod para el mensaje cuando no tiene gps activado
+            //metdodo para el mensaje cuando no tiene gps activado
             showAlertDialogNOGPS();
         }
     }
@@ -609,7 +607,7 @@ public class MapsClientActivity extends AppCompatActivity implements OnMapReadyC
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         //aseguramos que el gps de verdad esta habilitado
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            // y pasamos nuestro esta acitivo en verdadero
+            // y pasamos nuestro variable  en verdadero
             isActive = true;
         }
         //retornamos esta activo
@@ -646,11 +644,12 @@ public class MapsClientActivity extends AppCompatActivity implements OnMapReadyC
                 mmap.setMyLocationEnabled(true);
             }
             else {
+                //alert gps no activado
                 showAlertDialogNOGPS();
             }
         }
     }
-    //metodo para ver si el usuario tiene el gps activado y solicitar permiso
+    //metodo para ver si el usuario dio los permisos
     private void checkLocationPermissions() {
         //aseguremos en el manifest si tenemos los permisos
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
