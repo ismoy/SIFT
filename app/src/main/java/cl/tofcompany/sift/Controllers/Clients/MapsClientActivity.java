@@ -790,10 +790,10 @@ esos es para la opcion de menu no lo estoy usando ahora asi que comentado por el
         redirectActivity(this,WalletClient.class);
     }
 
-    void Clicklogout(View view){
+    /*void Clicklogout(View view){
         //cloe app
         // logout();
-    }
+    }*/
 
     public  void logout(View activity) {
         //inicialize alert dialog

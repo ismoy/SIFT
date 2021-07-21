@@ -390,6 +390,7 @@ public class MapClientBookingActivity extends AppCompatActivity implements OnMap
                     //agregamos los polyline en el mapa
                     mmap.addPolyline(mPolylineOptions);
                     //aviso los que dicen distance. duration text son de la Api
+                    //aviso los que dicen distance. duration text son de la Api
                     //recibimos el response de legs del objeto json
                     JSONArray legs = route.getJSONArray("legs");
                     //pasamos al leg nuestra variable legs

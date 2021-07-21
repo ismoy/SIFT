@@ -221,8 +221,7 @@ public class MapsDriverActivity extends AppCompatActivity implements OnMapReadyC
         });
         //eso es para logout en navegtion drawer
         View layoutlogout = findViewById(R.id.layoutlogout);
-        logout();
-
+       layoutlogout.setOnClickListener(v -> logout(v));
     }
     //metodo tasa aceptacion
     private void gotoTasaAceptacion() {
@@ -345,8 +344,9 @@ public class MapsDriverActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mListener != null) {
+        if (mListener!= null) {
             mGeofireProvider.isDriverWorking(mAuthProvider.getId()).removeEventListener(mListener);
+            Log.e("IDDRIVERS " , "su id " +mAuthProvider.getId());
         }
     }
     //metodo para saber si el conductor esta trabajando y quitaremos su id en la lista de conductor disponible
@@ -584,13 +584,59 @@ public class MapsDriverActivity extends AppCompatActivity implements OnMapReadyC
         return super.onOptionsItemSelected(item);
     }*/
 //metodo para cerrar session
-    void logout() {
+    /*void logout() {
         disconnect();
         mAuthProvider.logout();
         Intent intent = new Intent(MapsDriverActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
+    }*/
+  public  void logout(View activity) {
+      //inicialize alert dialog
+      Alertsignout();
+
+  }
+    //metodo para cerrar session con alert
+    public void Alertsignout() {
+        AlertDialog.Builder alertDialog2 = new
+                AlertDialog.Builder(this);
+
+        // Setting Dialog Title
+        alertDialog2.setTitle(R.string.confirm_signout);
+
+        // Setting Dialog Message
+        alertDialog2.setMessage(R.string.text_confirm);
+
+        // Setting Positive "Yes" Btn
+        alertDialog2.setPositiveButton(R.string.yes,
+                (dialog , which) -> {
+                    // Write your code here to execute after dialog
+                    disconnect();
+                    mAuthProvider.logout();
+                    Intent i = new Intent(getApplicationContext() ,
+                            MainActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+                });
+
+        // Setting Negative "NO" Btn
+        alertDialog2.setNegativeButton(R.string.no ,
+                (dialog , which) -> {
+                    // Write your code here to execute after dialog
+                    Toast.makeText(getApplicationContext() ,
+                            R.string.noaction, Toast.LENGTH_SHORT)
+                            .show();
+                    dialog.cancel();
+                    startActivity(new Intent(getApplicationContext(), MapsDriverActivity.class));
+                });
+
+        // Showing Alert Dialog
+        alertDialog2.show();
+
+
     }
+
     //metodo para generar toquen entre usuario
     void generateToken() {
         mTokenProvider.create(mAuthProvider.getId());

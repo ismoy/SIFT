@@ -1,5 +1,6 @@
 package cl.tofcompany.sift.Controllers.Clients;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -76,9 +78,7 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
     private TextView mtextViewOrigin,mtextViewDestino,mtextViewTiempo,mtextViewprice;
     //llamado de la clase InfoProvider
     private InfoProvider mInfoProvider;
-    //definemos el SharedPrefences
-    private SharedPreferences mSharedPreferences;
-    @Override
+      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_request);
@@ -108,9 +108,6 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
         mOriginLatLng = new LatLng(mExtraOriginLat, mExtraOriginLng);
         //pasamos al destino latlong los extra destinolat y extra destino long
         mDestinationLatLng = new LatLng(mExtraDestinationLat, mExtraDestinationLng);
-        //llamamos sharedpreferences y entramos en el metdod getAplication y tomamos el metodo GetShredPrefences
-        //eso es para tomar los datos de la tarjeta de credito que registro el cliente porque estan guardando en la memoria del celular
-        mSharedPreferences = getApplication().getSharedPreferences("datosTarjetas",MODE_PRIVATE);
         //iniciamos la clase de googleApiprovider y lo decimos que hace referencia a esta actividad
         mGoogleApiProvider = new GoogleApiProvider(DetailRequestActivity.this);
         //inciamos el txt origen con su id
@@ -130,7 +127,8 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
         //incimaos la clase de InfoProvider
         mInfoProvider = new InfoProvider();
         //creamos una accion de onclick sobre el btn
-        mSolicitarahora.setOnClickListener(view -> goToRequestDriver());
+        mSolicitarahora.setOnClickListener(view ->
+                goToRequestDriver());
     }
     //metodo para ir al solicitar y confirmar y buscar driver
     private void goToRequestDriver() {
@@ -148,17 +146,19 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
         intent.putExtra("destination_lat", mDestinationLatLng.latitude);
         //este intent enviara el destinolong
         intent.putExtra("destination_lng", mDestinationLatLng.longitude);
-        //creamos un valirable que recibre el valos de sharedpreferences
-        String typeTajeta = mSharedPreferences.getString("mnumerotarjeta","");
+        SharedPreferences preferencias = getSharedPreferences("datosTarjetas", Context.MODE_PRIVATE);
+        //creamos un valirable que recibe el valor de sharedpreferences
+        String typeTajeta = preferencias.getString("mnumerotarjeta","");
         //validamos si lo que llego es igual a no hay tarjeta
         if (typeTajeta.equals("No hay tarjetas")){
             //llamamos ese metodo
             Metodopago();
-          //  Toast.makeText(this, "Debes Agregar un metodo de pago", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "Debes Agregar un metodo de pago", Toast.LENGTH_SHORT).show();
         }else {
             Log.d("LLEGO","" +typeTajeta);
-            //encaso contrario inciamos el intent
+            //en caso contrario inciamos el intent
             startActivity(intent);
+            Toast.makeText(this, "estas buscando el viaje", Toast.LENGTH_SHORT).show();
             //terminamos la actividad
             finish();
         }

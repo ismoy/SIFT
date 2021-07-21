@@ -623,7 +623,23 @@ public class MapDriverBookingActivity extends AppCompatActivity implements OnMap
             }
         }
     }
-
+    //metodo para desconectar
+    private void disconnect() {
+        //saber si la locacion esta vacio
+        if (mFusedLocation != null) {
+            //si viene con datos eliminamos la location
+            mFusedLocation.removeLocationUpdates(mLocationCallback);
+            //preguntamos si la existe session
+            if (mAuthProvider.existSession()) {
+                //en caso que si eliminamos la session con el id lo tenomos en mAuthProvider
+                mGeofireProvider.removelocation(mAuthProvider.getId());
+            }
+        }
+        else {
+            //mensjae de error
+            Toast.makeText(this, "No te puedes desconectar", Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     //metodo onmapready para el mapa
     public void onMapReady(GoogleMap googleMap) {
@@ -723,23 +739,6 @@ public class MapDriverBookingActivity extends AppCompatActivity implements OnMap
             isActive = true;
         }
         return isActive;
-    }
-    //metodo para desconectar
-    private void disconnect() {
-        //saber si la locacion esta vacio
-        if (mFusedLocation != null) {
-            //si viene con datos eliminamos la location
-            mFusedLocation.removeLocationUpdates(mLocationCallback);
-            //preguntamos si la existe session
-            if (mAuthProvider.existSession()) {
-                //en caso que si eliminamos la session con el id lo tenomos en mAuthProvider
-                mGeofireProvider.removelocation(mAuthProvider.getId());
-            }
-        }
-        else {
-            //mensjae de error
-            Toast.makeText(this, "No te puedes desconectar", Toast.LENGTH_SHORT).show();
-        }
     }
     //metodo para empezar a tomar la locacion
     private void startLocation() {

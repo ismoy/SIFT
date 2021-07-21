@@ -150,7 +150,7 @@ private Button mactualizartarjeta;
                 AlertDialog.Builder(this);
 
         // Setting Dialog Title
-        alertDialog2.setTitle("estas sefuro de eliminar la tarjeta?");
+        alertDialog2.setTitle("estas seguro de eliminar la tarjeta?");
 
         // Setting Dialog Message
         alertDialog2.setMessage("Al aceptar se eliminara su tarjeta como metodo de pago ");
