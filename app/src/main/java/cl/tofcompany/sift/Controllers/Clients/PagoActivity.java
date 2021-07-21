@@ -23,6 +23,8 @@ public class PagoActivity extends AppCompatActivity {
     CardForm cardForm;
     //variable de alert dialog
     AlertDialog.Builder builder;
+    //variable para cifrado de numero tarjeta
+    String cifrado = "************";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,7 @@ public class PagoActivity extends AppCompatActivity {
                 //enviamos el mnombretarjeta
                 editor.putString("mnombretarjeta", cardForm.getCardholderName());
                 //enviamos el mnumerotarjeta
-                editor.putString("mnumerotarjeta",cardForm.getCardNumber());
+                editor.putString("mnumerotarjeta",cifrado+cardForm.getCardNumber().substring(cardForm.getCardNumber().length() -4));
                 //enviamos el mfechavencimiento
                 editor.putString("mfechavencimiento",cardForm.getExpirationMonth()+ "/"+cardForm.getExpirationYear());
                 //enviamos el mcodigoseguridad

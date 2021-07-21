@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +28,12 @@ private TextView mnombretarjeta;
 private Button meliminartarjeta;
     //variable btn actualizartarjeta
 private Button mactualizartarjeta;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarjeta_agregado_client);
        init();
+
     }
 
     //las inicializaciones de los variables estan aqui
@@ -73,6 +74,7 @@ private Button mactualizartarjeta;
         mactualizartarjeta.setOnClickListener(v -> {
             //alert mensaje
             MessageAlertActualizar();
+
         });
     }
     private void MensajeAlert() {
@@ -132,6 +134,7 @@ private Button mactualizartarjeta;
         editor.apply();
         //enviamos en la vista el llegotarjeta
         mnumerotarjeta.setText(llegotarjeta);
+        Log.d("NUMBERS ","numero mi tarjeta  " +llegotarjeta);
         //enviamos en la vista el llegofechavencimiento
         mfechavencimiento.setText(llegofechavencimiento);
         //enviamos en la vista el llegocodigoseguridad
