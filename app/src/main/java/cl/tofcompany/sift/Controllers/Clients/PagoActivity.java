@@ -24,7 +24,7 @@ public class PagoActivity extends AppCompatActivity {
     //variable de alert dialog
     AlertDialog.Builder builder;
     //variable para cifrado de numero tarjeta
-    String cifrado = "************";
+    String cifrado = "**** **** ****";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

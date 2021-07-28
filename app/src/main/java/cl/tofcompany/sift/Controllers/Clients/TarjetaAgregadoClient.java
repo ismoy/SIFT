@@ -28,6 +28,8 @@ private TextView mnombretarjeta;
 private Button meliminartarjeta;
     //variable btn actualizartarjeta
 private Button mactualizartarjeta;
+   //variable para ver el codigo cvv
+private TextView vercodigocvv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,8 @@ private Button mactualizartarjeta;
     private void init(){
         //llamamos mi toolbar
         MyToolbar.show(this,"",true);
+        //iniciamos vercodigocvv con su id
+        vercodigocvv = findViewById(R.id.vercodigocvv);
         //iniciamos mnumerotarjeta con su id
         mnumerotarjeta = findViewById(R.id.numerotarjeta);
         //iniciamos mfechavencimiento con su id
@@ -76,7 +80,12 @@ private Button mactualizartarjeta;
             MessageAlertActualizar();
 
         });
+        //agregamos un evento click sobre el icono
+        vercodigocvv.setOnClickListener(v ->
+                verCodigo());
     }
+
+
     private void MensajeAlert() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         //titulo
@@ -144,6 +153,17 @@ private Button mactualizartarjeta;
 
     }
 
+    private void verCodigo() {
+        //recibir los datos de la tarjeta
+        SharedPreferences preferencias=getSharedPreferences("datosTarjetas", Context.MODE_PRIVATE);
+        //crear una variable llegotarjeta para guardar lo que proviene de preferencias
+        String llegorjeta = preferencias.getString("mcodigoseguridad","");
+
+        if (vercodigocvv.isClickable()) {
+            Toast.makeText(this, ""+llegorjeta, Toast.LENGTH_SHORT).show();
+        }else {
+        }
+    }
     //metodo para eliminar la tarjeta con alert
     public void AlertDelete() {
         AlertDialog.Builder alertDialog2 = new
@@ -206,6 +226,7 @@ private Button mactualizartarjeta;
         //actualizamos la actividad
         startActivity(new Intent(getApplicationContext(),TarjetaAgregadoClient.class));
     }
+
     //metodo para el mensaje de eliminacion
     private void Message() {
         Toast.makeText(this, "Tarjeta Eliminada", Toast.LENGTH_SHORT).show();

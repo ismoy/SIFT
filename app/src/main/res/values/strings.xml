@@ -128,28 +128,28 @@
     <string name="Theresetpasswordemailcouldnotbesent" translatable="false">The reset password email could not be sent</string>
     <string name="Pleaseenteryouremail" translatable="false">Please enter your email</string>
     <string name="Youhaveanewreminder" translatable="false">You have a new reminder</string>
-    <string name="btnsave">Save</string>
+    <string name="btnsave" translatable="false">Save</string>
     <string name="vehicleBrand" translatable="false">Vehicle Brand is required.</string>
     <string name="vehiclePlate" translatable="false">Vehicle Plate is required.</string>
 
     <string name="ismoy_belizaire_inacapmail_cl_cristian_guajardo08_inacapmail_cl" translatable="false">ismoy.belizaire@inacapmail.cl , cristian.guajardo08@inacapmail.cl</string>
-    <string name="Soon">Soon</string>
+    <string name="Soon" translatable="false">Soon</string>
     <string name="remember_me" translatable="false">Remember Me</string>
     <string name="update_profile">Update Profile</string>
     <string name="desde">desde</string>
     <string name="hasta">HASTA</string>
     <string name="av_lo_ovalle">av lo ovalle</string>
-    <string name="title_activity_driver_home">DriverHome</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_driver_home" translatable="false">DriverHome</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_gallery" translatable="false">Gallery</string>
+    <string name="menu_slideshow" translatable="false">Slideshow</string>
     <string name="avisoalcliente" translatable="false">For your security, we will pre-authorize a charge of up to CLP20 on your card. Do not worry, it is only a verification and the money will not be charged to your account</string>
     <string name="cupones" translatable="false">Cupones Disponibles</string>
 </resources>

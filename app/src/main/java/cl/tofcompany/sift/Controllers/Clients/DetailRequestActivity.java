@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -152,13 +151,12 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
         //validamos si lo que llego es igual a no hay tarjeta
         if (typeTajeta.equals("No hay tarjetas")){
             //llamamos ese metodo
-            Metodopago();
+            AlertMetodopago();
            // Toast.makeText(this, "Debes Agregar un metodo de pago", Toast.LENGTH_SHORT).show();
         }else {
             Log.d("LLEGO","" +typeTajeta);
             //en caso contrario inciamos el intent
             startActivity(intent);
-            Toast.makeText(this, "estas buscando el viaje", Toast.LENGTH_SHORT).show();
             //terminamos la actividad
             finish();
         }
@@ -166,7 +164,7 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
 
     }
     //metodo mesaje de alert
-    private void Metodopago() {
+    private void AlertMetodopago() {
         //llamando el objeto Aletdialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         //ponemos el titulo
@@ -239,7 +237,7 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
                     String durationText = duration.getString("text");
                     //enviamos en la vista el tiempo
                     mtextViewTiempo.setText(durationText + " " +distanceText);
-                    //hacemos un spli la distancia en km
+                    //hacemos un split la distancia en km
                     String [] distanceAndKm = distanceText.split(" ");
                     // convertimos el valos de la distancia en double
                     double distancevalue = Double.parseDouble(distanceAndKm[0]);

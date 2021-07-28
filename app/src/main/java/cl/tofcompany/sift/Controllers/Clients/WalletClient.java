@@ -15,7 +15,7 @@ import cl.tofcompany.sift.includes.MyToolbar;
 
 public class WalletClient extends AppCompatActivity {
     //variable TextView numerotarjeta
-    private TextView mnmerodetarjeta;
+    private TextView mmerodetarjeta;
     //variable TextView fecha vencimiento
     private TextView mfechavencimiento;
     //variable TextView cvv
@@ -53,7 +53,7 @@ public class WalletClient extends AppCompatActivity {
            //invocamos el editos de SharedPreferences
            SharedPreferences.Editor editor = preferencias.edit();
            //enviamos el numero de tarjeta recibids
-           editor.putString("mnumerotarjeta", mnmerodetarjeta.getText().toString());
+           editor.putString("mnumerotarjeta", mmerodetarjeta.getText().toString());
            //enviamos el nombre de tarjeta recibids
            editor.putString("mnombretarjeta", mnombretarjeta.getText().toString());
            //enviamos el fechavencimiento de tarjeta recibids
@@ -96,7 +96,7 @@ public class WalletClient extends AppCompatActivity {
            startActivity(intent);
        });
        //iniciamos el numero de tarjeta con su id
-       mnmerodetarjeta = findViewById(R.id.tarjetayaagregada);
+       mmerodetarjeta = findViewById(R.id.tarjetayaagregada);
        //iniciamos el nombre de tarjeta con su id
        mnombretarjeta = findViewById(R.id.nombretarjetadesing);
        //iniciamos el cvv de tarjeta con su id
@@ -135,7 +135,7 @@ public class WalletClient extends AppCompatActivity {
         //aplicamos el cambio
         editor.apply();
         //enviamos en la vista lo que recibe llegotarjeta
-        mnmerodetarjeta.setText(llegotarjeta);
+       mmerodetarjeta.setText(llegotarjeta);
         //enviamos en la vista lo que recibe llegofechavencimiento
         mfechavencimiento.setText(llegofechavencimiento);
         //enviamos en la vista lo que recibe llegonombre

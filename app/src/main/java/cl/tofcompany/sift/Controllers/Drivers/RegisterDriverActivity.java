@@ -130,6 +130,7 @@ public class RegisterDriverActivity extends AppCompatActivity {
             mvehiclePlate.setError(getString(R.string.vehiclePlate));
             return;
         }
+
         if (!validaremail(email)) {
             mEmail.setError(getString(R.string.invalid_email));
             return;
@@ -240,4 +241,7 @@ public class RegisterDriverActivity extends AppCompatActivity {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
     }
+
+
+
 }
