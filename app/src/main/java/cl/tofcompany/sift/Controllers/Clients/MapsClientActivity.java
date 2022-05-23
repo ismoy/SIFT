@@ -837,7 +837,7 @@ esos es para la opcion de menu no lo estoy usando ahora asi que comentado por el
                     Intent i = new Intent(getApplicationContext() ,
                             MainActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                            Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK);   
                     startActivity(i);
                 });
 

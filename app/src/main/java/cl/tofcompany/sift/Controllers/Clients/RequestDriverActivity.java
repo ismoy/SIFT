@@ -170,7 +170,6 @@ public class RequestDriverActivity extends AppCompatActivity {
                     createClientBooking();
                     Log.d("DRIVER", "ID: " + mIdDriverFound);
                 }
-
             }
 
             @Override

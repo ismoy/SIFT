@@ -9,8 +9,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class GeofireProvider {
 
-    private DatabaseReference mDatabase;
-    private GeoFire mGeofire;
+    private final DatabaseReference mDatabase;
+    private final GeoFire mGeofire;
 
     public GeofireProvider (String reference) {
         mDatabase = FirebaseDatabase.getInstance().getReference().child(reference);

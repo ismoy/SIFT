@@ -143,8 +143,6 @@ public class MapsDriverActivity extends AppCompatActivity implements OnMapReadyC
     private void init(){
         //iniciamos la clase AuthProvider
         mAuthProvider = new AuthProvider();
-        //iniciamos la clase GeofireProvider y puntamos al nodo active_drivers
-        mGeofireProvider = new GeofireProvider("active_drivers");
         //iniciamos la clase TokenProvider
         mTokenProvider = new TokenProvider();
         //iniciamos la clase FusedLocationProvider

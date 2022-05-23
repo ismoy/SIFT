@@ -821,7 +821,7 @@ public class MapDriverBookingActivity extends AppCompatActivity implements OnMap
                     //eso recibe el fcmBody
                     mNotificationProvider.sendNotification(fcmBody).enqueue(new Callback<FCMResponse>() {
                         @Override
-                        public void onResponse(Call<FCMResponse> call, Response<FCMResponse> response) {
+                        public void onResponse(@NonNull Call<FCMResponse> call, Response<FCMResponse> response) {
                             //verificar si en body no llega vacio
                             if (response.body() != null) {
                                 //pregunta si el exito del body es distinto a 1

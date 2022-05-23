@@ -21,7 +21,7 @@ public class TokenProvider {
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
             @Override
             public void onComplete(@NonNull Task<String> task) {
-                Token token = new Token(task.getResult());
+               Token token = new Token(task.getResult());
                 mDatabaseReference.child(idUser).setValue(token);
 
             }

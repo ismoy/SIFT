@@ -81,10 +81,10 @@ public class DetailRequestActivity extends AppCompatActivity implements OnMapRea
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_request);
-        init();
+        Init();
     }
     //para optimizar el codigo creamos un metodo para esos variables
-    private void init(){
+    private void Init(){
         //inciando el variable de supportfragment con su id
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         //lo pasamos el metodo de getMapsAsync

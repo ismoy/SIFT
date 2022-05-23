@@ -16,40 +16,6 @@
     </LinearLayout>
 
 
-<!--
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/black"
-                />
-        </com.google.android.material.appbar.AppBarLayout>
- </RelativeLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:itemIconTint="@color/colorWhite"
-        android:id="@+id/navigations"
-        app:menu="@menu/main"
-        app:itemTextColor="@color/colorWhite"
-        app:headerLayout="@layout/main_header"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="start"/>-->
-
-
-
-
-
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_height="match_parent"

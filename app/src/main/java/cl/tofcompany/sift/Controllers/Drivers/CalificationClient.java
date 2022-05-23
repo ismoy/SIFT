@@ -66,8 +66,6 @@ private double mExtraPrice = 0;
         mClientBookingProvider = new ClientBookingProvider();
         //recibiendo el id del cliente por el intent extra
         mExtraClientId = getIntent().getStringExtra("idClient");
-        //iniciamos el objeto de la clase HistoryBookingProvider
-        mHistoryBookingProvider = new HistoryBookingProvider();
         //llamado el precio con su id
         mTextViewprice = findViewById(R.id.textviewprecio);
         //recibiendo el precio por el intent extra
